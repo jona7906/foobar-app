@@ -1,0 +1,67 @@
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin displayLogo {
+  font-size: 2.5em;
+  color: color(red_header);
+  font-family: v.$vintage;
+  text-align: center;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin buttons {
+  all: unset;
+  /* grid-column: 1/3; */
+  border: 1px solid color(red_header);
+  border-radius: 5px;
+  color: color(red_header);
+  font-family: v.$lemonMilk;
+  padding: 10px;
+  cursor: pointer;
+}
+
+@mixin firstFade {
+  opacity: 20%;
+  margin-top: -50px;
+}
+
+@mixin lastFade {
+  opacity: 5%;
+  margin-top: -50px;
+}
+
+@mixin transition-ease {
+  transition: all 0.5s ease-in-out;
+}
+
+@mixin subheaders {
+  font-family: v.$lemonMilk;
+  color: color(red_header);
+}

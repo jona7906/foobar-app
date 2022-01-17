@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+@font-face {
+  font-family: Vintage;
+  src: url("/fonts/VINTAGE\ COLLEGE\ DEPT_worn.otf") format("truetype");
+}
+
+@font-face {
+  font-family: LemonMilk;
+  src: url("/fonts/LemonMilk.otf") format("truetype");
+}
+
+@font-face {
+  font-family: Smythe;
+  src: url("/fonts/Smythe-Regular.ttf") format("truetype");
+}
+
+$lemonMilk: "font-family", LemonMilk;
+$vintage: "font-family", Vintage;
+$smythe: "font-family", Smythe;
+
+$colors: (
+  "dark_background": #1a2129,
+  "red_header": #fd695e,
+  "light_text": #e6e6e6,
+);
+

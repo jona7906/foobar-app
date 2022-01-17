@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment</title>
+  </head>
+  <body>
+    <header>
+      <div class="toggle">
+        <span class="onoff">Switch mode</span>
+        <span class="slider round"></span>
+      </div>
+
+      <div class="menu-btn">
+        <span class="menu-btn__burger"></span>
+      </div>
+
+      <nav class="nav">
+        <ul class="menu-nav">
+          <li class="menu-nav__item">
+            <div class="logo_menu">
+              <h1 class="title">
+                FOO BAR
+                <div class="firstfade">FOO BAR</div>
+                <div class="lastfade">FOO BAR</div>
+              </h1>
+            </div>
+          </li>
+          <li class="menu-nav__item">
+            <a href="index.html#top_section" class="menu-nav__link"> Beers </a>
+          </li>
+          <li class="menu-nav__item active">
+            <a href="cart.html" class="menu-nav__link"> My Order </a>
+          </li>
+          <li class="menu-nav__item">
+            <a href="help.html" class="menu-nav__link"> Help </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="logo">
+      <h1 class="title">
+        FOO BAR
+        <div class="firstfade">FOO BAR</div>
+        <div class="lastfade">FOO BAR</div>
+      </h1>
+    </div>
+    <div class="payment_container">
+      <h1>Choose a payment type</h1>
+      <div class="icon_container">
+        <div>
+         <img class="card" src="/assets/images/credit-card-svgrepo-com.svg" alt="Card" />  
+        </div>
+        <div>
+         <img class="mp" src="/assets/images/mp.svg" alt="Mobilepay" />
+        </div>
+        <div>
+          <img class="cash" src="/assets/images/cash.svg" alt="Cash" />
+        </div>
+        <p class="cash_response"></p>
+      </div>
+    </div>
+    <div class="card_container">
+    </div>
+    <form id="payment_form" class="hide">
+      <div id="form_container">
+      <div id="left">
+      <div id="number">
+        <input id="cardNumber" type="text" name="number"  placeholder="13-16 digit cardnumber" pattern="^\d{4} \d{4} \d{4} \d{4}$" enterkeyhint="next" required />
+        <label for="cardNumber"></label>
+        <span id="error_number"></span>
+      </div>
+      <div id="expiry">
+        <input id="exp" type="text" name="expiry" placeholder="expiration date-00/0000" pattern="^\d{2} \/ \d{2}$" required />
+        <label for="exp"></label>
+        <span id='error_exp'></span>
+      </div>
+    </div>
+    <div id="right">
+      <div id="name">
+        <input id="cardName" type="text" name="name"  autocomplete="name" placeholder="Name on card" pattern="^.+ .+$" enterkeyhint="next" required />
+        <label for="cardName"></label>
+        <span id="error_name"></span>
+      </div>
+      <div id="cvc">
+        <input id="theCVC" type="text" name="cvc" placeholder="CVC" pattern="^\d{3}$" required />
+        <label for="theCVC"></label>
+        <span id='error_cvc'></span>
+      </div>
+    </div>
+  </div>
+  <div class="submit_container">
+    <button type="button" id="submit">Pay</button>
+  </div>
+    </form>
+    
+    
+    <div class="scan_container">
+      <div class="scan"></div>
+    </div>
+    <div class="qr_container"></div>
+
+    <div id="back_wrapper">
+      <button id="back" onclick="history.back()">Go Back</button>
+    </div>
+    <script type="module" src="/cart.js"></script>
+    <script type="module" src="/payment.js"></script>
+  </body>
+</html>

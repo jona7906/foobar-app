@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="module" src="/main.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foo Bar</title>
+  </head>
+
+  <body style="display: none">
+    <header>
+      <div class="toggle">
+        <span class="onoff">Switch mode</span>
+
+        <span class="slider round"></span> 
+      </div>
+
+      <div class="menu-btn">
+        <span class="menu-btn__burger"></span>
+      </div>
+
+      <nav class="nav">
+        <ul class="menu-nav">
+          <li class="menu-nav__item">
+            <div class="logo_menu">
+              <h1 class="title">
+                FOO BAR
+                <div class="firstfade">FOO BAR</div>
+                <div class="lastfade">FOO BAR</div>
+              </h1>
+            </div>
+          </li>
+          <li class="menu-nav__item active">
+            <a href="index.html#top_section" class="menu-nav__link"> Beers </a>
+          </li>
+          <li class="menu-nav__item">
+            <a href="cart.html" class="menu-nav__link"> My Order </a>
+          </li>
+          <li class="menu-nav__item">
+            <a href="help.html" class="menu-nav__link"> Help </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    
+    <div id="app"></div>
+    <section class="frontpage_sectionwrapper">
+      <div class="logo">
+        <h1 class="title">
+          FOO BAR
+          <div class="firstfade">FOO BAR</div>
+          <div class="lastfade">FOO BAR</div>
+        </h1>
+      </div>
+      <a class="order_button" >Order</a>
+    </section>
+
+    <main>
+      <section id="top_section">
+        <div class="logo_all_beers">
+          <h1 class="title">
+            FOO BAR
+            <div class="firstfade">FOO BAR</div>
+            <div class="lastfade">FOO BAR</div>
+          </h1>
+        </div>
+        <h3 class="subheader">All Beers</h3>
+      </section>
+
+      <div class="beers_container">
+
+        <div id="sorting_beer">
+        <h2>SORT BY:</h2>
+        <button id="sort_by_price" data-sort-direction="asc"><p>Price</p></button>
+        <button id="sort_by_alcohol" data-sort-direction="asc"><p>Alcohol</p></button>
+          </div>
+        <ul>
+          <!-- adding clones to ul here -->
+        </ul>
+      </div>
+
+      <template>
+        <article>
+        <ul>
+          <li>
+            <div class="item-wrapper">
+              <div class="img-wrapper">
+                <img src="/#" />
+              </div>
+              <div class="beertxt">
+                <h3 class="beer_name"></h3>
+                <p class="beer_type"></p>
+                <p class="price"></p>
+                
+                <div class='buttons_container'>
+                  <button id="add">+</button>
+                  <p class="quantity"></p>
+                  <button id="remove">-</button>
+                  
+                </div>
+                <p class="beer-total"></p>
+                
+              </div>
+             
+            </div>
+          </li>
+        </ul>
+        </article>
+      </template>
+
+      <div class="cart_container">
+        <!-- adding cart clones here -->
+      </div>
+
+
+      <div class="total_sum_container">
+        <a href="cart.html" id="total_sum"></a>
+        
+      </div>
+
+
+    </main>
+
+
+  </body>
+</html>

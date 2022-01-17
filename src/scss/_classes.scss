@@ -1,0 +1,55 @@
+@use "/scss/config.scss" as v;
+@function color($color-name) {
+  @return map-get(v.$colors, $color-name);
+}
+
+.fadeUp {
+  animation-name: fadeUpKF;
+  animation-duration: 1.3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeUpKF {
+  to {
+    transform: translateY(-50vw);
+  }
+}
+
+.fadeOut {
+  animation-name: fadeOutKF;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeOutKF {
+  50% {
+    transform: scale(1.3);
+    background-color: color(dark_background);
+    border: 2px solid #26b9b9;
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.fadeIn {
+  animation-name: fadeInKF;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInKF {
+  100% {
+    transform: scale(2);
+  }
+}
+
+.hide {
+  display: none;
+}

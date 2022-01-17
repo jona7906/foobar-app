@@ -1,0 +1,272 @@
+@use "/scss/config.scss" as v;
+@use "/scss/classes.scss";
+@import "/scss/mixins.scss";
+
+@function color($color-name) {
+  @return map-get(v.$colors, $color-name);
+}
+
+// MENU
+.menu-btn {
+  position: fixed;
+  z-index: 100;
+  right: 2rem;
+  top: 2rem;
+  height: 20px;
+  width: 50px;
+  cursor: pointer;
+  @include transition-ease;
+
+  &__burger {
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    width: 50px;
+    height: 2px;
+    background: rgb(255, 206, 206);
+    @include transition-ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      width: 50px;
+      height: 2px;
+      background: rgb(255, 206, 206);
+      @include transition-ease;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      width: 50px;
+      height: 2px;
+      background: rgb(255, 206, 206);
+      @include transition-ease;
+    }
+
+    &.open {
+      transform: rotate(180deg);
+      background: transparent;
+
+      &::before {
+        transform: rotate(45deg) translate(5px, 8px);
+      }
+
+      &::after {
+        width: 50px;
+        transform: rotate(-45deg) translate(3px, -7px);
+      }
+    }
+  }
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  opacity: 1;
+  visibility: hidden;
+  z-index: 99;
+
+  a {
+    font-family: v.$lemonMilk;
+    color: color(dark_background);
+  }
+
+  &.open {
+    visibility: visible;
+  }
+
+  .menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background: color(red_header);
+    list-style-type: none;
+    padding-right: 1rem;
+    transform: translateX(100vw);
+    transition: 1s;
+
+    &.open {
+      transform: translateX(0);
+    }
+
+    &__item {
+      opacity: 0;
+      transform: translateX(100vw);
+      transition: 0.5s;
+
+      &.open {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      &.active > a {
+        color: rgb(255, 206, 206);
+      }
+    }
+
+    &__link {
+      display: inline-block;
+      font-size: 2rem;
+      text-transform: uppercase;
+      padding: 2rem 0;
+      font-weight: 300;
+      @include transition-ease;
+
+      &:hover {
+        color: rgb(255, 206, 206);
+      }
+    }
+  }
+}
+
+@for $i from 1 through 4 {
+  .menu-nav__item:nth-child(#{$i}) {
+    transition-delay: ($i * 0.2s) + 0.2s;
+  }
+}
+
+.logo_menu {
+  @include displayLogo();
+  color: color(dark_background);
+
+  .firstfade {
+    @include firstFade();
+  }
+
+  .lastfade {
+    @include lastFade();
+  }
+}
+
+//Dark/light mode
+
+.toggle {
+  /* position: fixed; */
+  padding: 1vw;
+  z-index: 50;
+  width: 200px;
+
+  .onoff {
+    color: color(red_header);
+    font-size: 1.5em;
+    text-align: center;
+    /* display: block; */
+    font-family: v.$smythe;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    &:checked + .slider {
+      background-color: color(dark_background);
+      box-shadow: 0 0 12px color(dark_background);
+    }
+
+    &:checked + .slider:before {
+      transform: translateX(40px);
+    }
+  }
+
+  .slider {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    background-color: #fd695e;
+    transition: 0.4s;
+    max-width: 100px;
+    height: 30px;
+    &:before {
+      content: "";
+      position: absolute;
+      height: 20px;
+      width: 50px;
+      background-color: black;
+      transition: 0.4s;
+      top: 5px;
+      left: 5px;
+    }
+  }
+  .round {
+    border-radius: 10px;
+    &:before {
+      border-radius: 10px;
+    }
+  }
+}
+
+.dark-mode {
+  background-color: color(dark_background);
+  color: color(light_text);
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: color(red_header);
+  }
+  p {
+    color: color(light_text);
+  }
+  .slider:before {
+    background-color: color(light_text);
+  }
+}
+
+.light-mode {
+  background-color: color(light_text);
+  color: color(dark_background);
+  h1,
+  h2,
+  h3,
+  h4,
+  .beers_container .item-wrapper .beertxt #add,
+  .beers_container .item-wrapper .beertxt #remove,
+  .beers_container .item-wrapper .beertxt .beer_name,
+  .toggle .onoff,
+  p {
+    color: color(dark_background);
+  }
+  .beers_container .item-wrapper .beertxt #add,
+  .beers_container .item-wrapper .beertxt #remove {
+    border: 1px solid color(dark_background);
+  }
+  .order_button,
+  .total_container a,
+  .container button,
+  #back_wrapper #back,
+  .total_sum_container #total_sum {
+    border: 1px solid color(dark_background);
+    color: color(dark_background);
+  }
+
+  .slider:before {
+    background-color: color(light_text);
+    left: 45px;
+  }
+
+  .price {
+    color: color(dark_background);
+  }
+
+  .menu-btn__burger {
+    background: color(dark_background);
+    .open {
+      background: transparent;
+    }
+    &::before {
+      background: color(dark_background);
+    }
+    &::after {
+      background: color(dark_background);
+    }
+  }
+}

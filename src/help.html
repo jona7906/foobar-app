@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help</title>
+  </head>
+
+  <body style="display: none">
+    <header>
+      <div class="toggle">
+        <span class="onoff">Switch mode</span>
+
+        <span class="slider round"></span>
+      </div>
+
+      <div class="menu-btn">
+        <span class="menu-btn__burger"></span>
+      </div>
+
+      <nav class="nav">
+        <ul class="menu-nav">
+          <li class="menu-nav__item">
+            <div class="logo_menu">
+              <h1 class="title">
+                FOO BAR
+                <div class="firstfade">FOO BAR</div>
+                <div class="lastfade">FOO BAR</div>
+              </h1>
+            </div>
+          </li>
+          <li class="menu-nav__item">
+            <a href="index.html#top_section" class="menu-nav__link"> Beers </a>
+          </li>
+          <li class="menu-nav__item">
+            <a href="cart.html" class="menu-nav__link"> My Order </a>
+          </li>
+          <li class="menu-nav__item active">
+            <a href="help.html" class="menu-nav__link"> Help </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="logo">
+      <h1 class="title">
+        FOO BAR
+        <div class="firstfade">FOO BAR</div>
+        <div class="lastfade">FOO BAR</div>
+      </h1>
+    </div>
+
+    <section id="helpme">
+      <div id="helpwrapper">
+        <h2>NEED HELP?</h2>
+        <p class="pressBtnTxt">Press this button to summon a waiter</p>
+        <p class="waitMessage hide">Please wait ..</p>
+      </div>
+      <div id="helpcircle"></div>
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+    <section id="instructions">
+      <div id="howtoorder">
+        <h2>HOW TO ORDER</h2>
+        <p>1. Select beers</p>
+        <p>2. Go to cart</p>
+        <p>3. Choose payment and pay</p>
+        <p>Enjoy!</p>
+      </div>
+    </section>
+
+    <script type="module" src="/help.js"></script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

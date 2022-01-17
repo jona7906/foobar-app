@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+  </head>
+
+  <body style="display: none">
+    <header>
+      <div class="toggle">
+        <span class="onoff">Switch mode</span>
+        <span class="slider round"></span>
+      </div>
+      <div class="menu-btn">
+        <span class="menu-btn__burger"></span>
+      </div>
+
+      <nav class="nav">
+        <ul class="menu-nav">
+          <li class="menu-nav__item">
+            <div class="logo_menu">
+              <h1 class="title">
+                FOO BAR
+                <div class="firstfade">FOO BAR</div>
+                <div class="lastfade">FOO BAR</div>
+              </h1>
+            </div>
+          </li>
+          <li class="menu-nav__item">
+            <a href="index.html" class="menu-nav__link"> Beers </a>
+          </li>
+          <li class="menu-nav__item active">
+            <a href="cart.html" class="menu-nav__link"> My Order </a>
+          </li>
+          <li class="menu-nav__item">
+            <a href="help.html" class="menu-nav__link"> Help </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="logo">
+        <h1 class="title">
+          FOO BAR
+          <div class="firstfade">FOO BAR</div>
+          <div class="lastfade">FOO BAR</div>
+        </h1>
+      </div>
+
+      <h3>Order list:</h3>
+      <div class="order_list">
+        <hr />
+      </div>
+
+      <template>
+        <div class="container">
+          <p class="beer_name"></p>
+          <p class="price"></p>
+          <div class="button_container">
+            <button id="add">+</button>
+            <button id="remove">-</button>
+          </div>
+        </div>
+        <hr />
+
+      </template>
+
+      
+
+      <div class="total_container">
+        <a href="pay.html" id="total"></a>
+      </div>
+      
+    </main>
+    <script type="module" src="/cart.js"></script>
+  </body>
+</html>

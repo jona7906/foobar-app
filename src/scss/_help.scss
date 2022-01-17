@@ -1,0 +1,79 @@
+@use "/scss/config.scss" as v;
+@use "/scss/classes.scss";
+@use "/scss/menu.scss";
+@import "/scss/mixins.scss";
+
+@function color($color-name) {
+  @return map-get(v.$colors, $color-name);
+}
+
+#helpme,
+#instructions {
+  text-align: center;
+  margin-top: 10vh;
+  height: 40vw;
+
+  #helpwrapper {
+    margin-bottom: 5vw;
+  }
+  #helpcircle {
+    background-color: #26b9b9;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: auto;
+    cursor: pointer;
+  }
+  h2 {
+    color: color(red_header);
+    font-family: "font-family", LemonMilk;
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+// waiting animation
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transform: scale(0);
+  margin-top: 5vw;
+  div {
+    position: absolute;
+    border: 2px solid #26b9b9b7;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    &:nth-child(2) {
+      animation-delay: -0.1s;
+      border: 1px solid #26b9b970;
+    }
+    &:last-child {
+      animation-delay: 0.1s;
+      border: 3px solid #26b9b9;
+    }
+  }
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
